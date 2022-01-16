@@ -1,0 +1,11 @@
+<h1>Customer Login</h1>
+<p><% :alert %></p>
+<%= form_tag sessions_path do |f| %>
+<%= label_tag :email %>
+<%= text_field_tag :email %>
+<br><br>
+<%= label_tag :password %>
+<%= password_field_tag :password %>
+<br><br>
+<%= submit_tag "Login" %>
+<% end %>

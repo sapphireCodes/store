@@ -1,0 +1,22 @@
+<h1>Welcome to Store</h1>
+
+
+<h2>For Customers</h2>
+<% if current_user %>
+<p><%= current_user.email %> is logged in currently</p>
+<%= link_to "Logout", logout_path %> 
+<% else %>
+<%= link_to "Signup", signup_path %>
+<%= link_to "Login", login_path %>
+<% end %>
+
+
+
+<h2>For Staff</h2>
+<% if current_staff %>
+    <p><%= current_staff.email %> is logged in currently</p>
+    <%= link_to "Admin Panel", rails_admin_path, admin? %>
+    <%= link_to "Logout", staff_logout_path %> 
+<% else %>
+    <%= link_to "Login", staff_login_path %>
+<% end %>
